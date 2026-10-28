@@ -39,8 +39,7 @@ builder.Services.AddDbContext<ZombiePartyDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).UseLazyLoadingProxies());
 // On utilise typeof ici, parce que c’est un service générique. Remarquez qu’aucun type n’est spécifié dans les <>, donc le service pourra être utilisé par TOUS les types qui utiliseront IServiceBaseAsync<T>.
 builder.Services.AddScoped(typeof(IServiceBaseAsync<>), typeof(ServiceBaseAsync<>));
-
-
+builder.Services.AddScoped<IZombieTypeService, ZombieTypeService>();
 
 var app = builder.Build();
 
