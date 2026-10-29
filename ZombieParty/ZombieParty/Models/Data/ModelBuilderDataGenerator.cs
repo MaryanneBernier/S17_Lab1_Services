@@ -37,7 +37,7 @@ namespace ZombieParty.Data
 
             #region ZombieType
             builder.Entity<ZombieType>().HasData(
-                new ZombieType { Id = 1, Point = 3, TypeName = "Contact" },
+                new ZombieType { Id = 1, Point = 3, TypeName = "Contact"},
                 new ZombieType { Id = 2, Point = 2, TypeName = "Virus" },
                 new ZombieType { Id = 3, Point = 3, TypeName = "Chimique" },
                 new ZombieType { Id = 4, Point = 4, TypeName = "Morsure" },

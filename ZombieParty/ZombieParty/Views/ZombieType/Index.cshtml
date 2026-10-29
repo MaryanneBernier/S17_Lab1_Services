@@ -30,9 +30,13 @@
             {
                 <tr>
                     <td width="50%">
-                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id" >
+                        <a class="btn @(item.IsDisponible ? "btn-info" : "btn-secondary")" asp-action="Details" asp-route-id="@item.Id">
                             @item.TypeName
-                        </a>
+                            @if (!item.IsDisponible)
+                                {
+                                    <span>Indisponible</span>
+                                }
+                            </a>
                     </td>
                     <td class="text-center" width="15%">@item.Point</td>
                     <td class="text-center">
